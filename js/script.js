@@ -11,18 +11,20 @@ var utente = prompt('Inserisci il tuo cognome');
 utente = utente.charAt(0).toUpperCase()+utente.slice(1).toLowerCase();
 
 // // Controllo ridondanza input utente
-// var i = 0;
-// var trovato = false;
-// while (i < cognomi.length && !trovato) {
-//     if (utente == cognomi[i]) {
-//         alert('Sei già nella lista');
-//         trovato = true;
-//     }
-//     i++;
-// }
+var i = 0;
+var trovato = false;
+while (i < cognomi.length && !trovato) {
+    if (utente == cognomi[i]) {
+        alert('Sei già nella lista');
+        trovato = true;
+    }
+    i++;
+}
 
-// Inserisco il dato dell'utente nell'array
-cognomi.push(utente);
+// Inserisco il cognome dell'utente nell'array dopo averne verificato l'assenza nella lista
+if (trovato == false) {
+    cognomi.push(utente);
+}
 
 // Ordino gli elementi dell'array (sort() esegue ordine alfabetico di default)
 cognomi.sort();
